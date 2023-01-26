@@ -1,0 +1,24 @@
+{% extends "design.html" %}
+<html>
+    <head>
+      <title>{{name}}</title>
+    </head>
+    <body>
+        {% block content %}
+        <form method="post" action="/calculator/">
+          {% csrf_token %}
+          EXPRESSION:- <input type="text" name="val"/>
+          <input type="submit" value="Get Result"/>
+        </form>
+        <hr/>
+        <form action="cal">
+          Num1:-<input type ="number" name="n1"/>
+          Num2:-<input type ="number" name="n2"/>
+          <input type="submit" name="ch" value="Add"/>
+          <input type="submit" name="ch" value="Sub"/>
+          <input type="submit" name="ch" value="Mul"/>
+          <input type="submit" name="ch" value="Div"/>
+          </form>
+        {% endblock %}
+    </body>
+</html>
